@@ -29,7 +29,7 @@ dpf_add_plugin(${NAME}
 target_include_directories(${NAME} PUBLIC src)
 target_include_directories(${NAME} PUBLIC deps/dpf-widgets/generic)
 target_include_directories(${NAME} PUBLIC deps/dpf-widgets/opengl)
-target_link_libraries(${NAME} PUBLIC lvgl::lvgl)
+target_link_libraries(${NAME} PUBLIC lvgl::lvgl $<$<BOOL:${WIN32}>:winmm>)
 
 # FIXME LVGL has no way to configure this, report upstream?
 set_target_properties(lvgl PROPERTIES POSITION_INDEPENDENT_CODE ON)
