@@ -23,12 +23,11 @@ dpf_add_plugin(${NAME}
       src/PluginDSP.cpp
   FILES_UI
       src/PluginUI.cpp
-      deps/dpf-widgets/opengl/LVGL.cpp)
+      deps/dpf-widgets/generic/LVGL.cpp)
 
 # setup build includes and libraries
 target_include_directories(${NAME} PUBLIC src)
 target_include_directories(${NAME} PUBLIC deps/dpf-widgets/generic)
-target_include_directories(${NAME} PUBLIC deps/dpf-widgets/opengl)
 target_link_libraries(${NAME} PUBLIC lvgl::lvgl $<$<BOOL:${WIN32}>:winmm>)
 
 # FIXME LVGL has no way to configure this, report upstream?
