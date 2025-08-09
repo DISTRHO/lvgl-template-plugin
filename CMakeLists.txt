@@ -2,7 +2,7 @@
 # Copyright (C) 2021-2024 Filipe Coelho <falktx@falktx.com>
 # SPDX-License-Identifier: ISC
 
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.7...3.31)
 
 # setup project
 set(CMAKE_CXX_STANDARD 14)
@@ -10,7 +10,7 @@ set(NAME lvgl-demo-plugin)
 project(${NAME})
 
 # tell LVGL where to find its config file
-set(LV_CONF_PATH "${PROJECT_SOURCE_DIR}/src/lv_conf.h")
+set(LV_BUILD_CONF_PATH "${PROJECT_SOURCE_DIR}/src/lv_conf.h")
 
 # include DPF and LVGL
 add_subdirectory(deps/dpf)
@@ -18,7 +18,7 @@ add_subdirectory(deps/lvgl)
 
 # create plugin build target
 dpf_add_plugin(${NAME}
-  TARGETS clap lv2 vst2 vst3 jack
+  TARGETS au clap jack lv2 vst2 vst3
   FILES_DSP
       src/PluginDSP.cpp
   FILES_UI
