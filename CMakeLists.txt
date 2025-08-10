@@ -10,7 +10,7 @@ set(NAME lvgl-demo-plugin)
 project(${NAME})
 
 # tell LVGL where to find its config file
-set(LV_BUILD_CONF_PATH "${PROJECT_SOURCE_DIR}/src/lv_conf.h")
+set(LV_BUILD_CONF_PATH "${PROJECT_SOURCE_DIR}/src/lv_conf.h" CACHE PATH "")
 
 # include DPF and LVGL
 add_subdirectory(deps/dpf)
