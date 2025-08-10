@@ -179,6 +179,22 @@
 #define DISTRHO_UI_URI DISTRHO_PLUGIN_URI "#UI"
 
 /**
+   A 4-character symbol that identifies a brand or manufacturer, with at least one non-lower case character.
+   Plugins from the same brand should use the same symbol.
+   @note This macro is required when building AU plugins, and used for VST3 if present
+   @note Setting this macro will change the uid of a VST3 plugin.
+         If you already released a DPF-based VST3 plugin make sure to also enable DPF_VST3_DONT_USE_BRAND_ID
+ */
+#define DISTRHO_PLUGIN_BRAND_ID Dstr
+
+/**
+   A 4-character symbol which identifies a plugin.
+   It must be unique within at least a set of plugins from the brand.
+   @note This macro is required when building AU plugins
+ */
+#define DISTRHO_PLUGIN_UNIQUE_ID lvgl
+
+/**
    Custom LV2 category for the plugin.@n
    This is a single string, and can be one of the following values:
 
